@@ -1,0 +1,40 @@
+.home--section > h1 {
+  margin-bottom: 1.4rem;
+  margin-left: 2.6rem;
+}
+
+.home--section > p {
+  max-width: 50rem;
+  margin-left: 3rem;
+  line-height: 2.2rem;
+  position: relative;
+}
+
+.home--section > p::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -3rem;
+  background: var(--gradient-vertical);
+}
+
+.home--section > p > span {
+  color: var(--white);
+}
+
+/* -------- MEDIA QUERIES -------- */
+/* ******************************* */
+@media (max-width: 768px) {
+  .home--section > h1 {
+    margin-bottom: 3rem;
+  }
+
+  .home--section > p {
+    padding-right: 0rem;
+  }
+}
+
+@media (max-width: 380px) {
+}
