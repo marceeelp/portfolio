@@ -12,16 +12,18 @@ const Home = () => {
     >
       <h1>{heading}</h1>
       <p>
-        Welcome to my page. My name is <span>Marcel Peda</span>. I'm 26 years
-        old and from Hamburg, Germany. I'm passionate about pretty much
-        everything that has to do with tech.
+        Welcome to my page<span>.</span> My name is <span>Marcel Peda. </span>
+        I'm 26 years old and from Hamburg<span>,</span> Germany<span>. </span>
+        I'm passionate about pretty much everything that has to do with tech
+        <span>.</span>
         <br />
         <br />
         My journey into the endless space of I.T. started with learning how to
-        create Websites and Web games. It didn't take long til I got curious
-        about how the Internet works, so I started learning about things like
-        Networking and Internet Protocols which led me to what I'm doing today
-        <br />- Cybersecurity.
+        create Websites and Web games<span>.</span> It didn't take long til I
+        got curious about how the Internet works<span>,</span> so I started
+        learning about things like Networking and Internet Protocols which led
+        me to what I'm doing today
+        <br />- Cybersecurity<span>.</span>
       </p>
     </section>
   );

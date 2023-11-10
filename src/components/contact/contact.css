@@ -75,7 +75,7 @@ button:hover {
 /* ******************************* */
 @media (max-width: 920px) {
   .contact--section {
-    transform: scale(0.8) translateX(-2rem);
+    transform: translateX(-2rem);
   }
 
   form {
