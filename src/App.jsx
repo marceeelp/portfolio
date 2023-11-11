@@ -58,7 +58,7 @@ const App = () => {
         )}
 
         <Frame isClicked={isClicked} />
-        {/* <CanvasBackground /> */}
+        <CanvasBackground />
       </main>
     </PageProvider>
   );
