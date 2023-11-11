@@ -1,26 +1,31 @@
+export const animatedIndeces = [16, 23, 24, 31, 39, 42];
+
 export const text1 = [
   "I'm ",
-  "Marcel Peda,", //animate [1]
+  "Marcel ",
+  "Peda, ",
   "a ",
   "26 ",
   "years ",
   "old, ",
   "self-taught ",
-  "I.T. guy from ", //animate [7]
+  "I.T. ",
+  "guy ",
+  "from ",
   "Hamburg, ",
   "Germany. ",
   "I'm ",
   "passionate ",
   "about ",
-  "everything that ", //animate [13]
+  "everything that ", //animate [16]
   "has ",
   "to ",
   "do ",
   "with ",
   "tech, ",
   "especially ",
-  "frontend web dev & ", //animate [20]
-  "Cybersecurity. ", //animate [21]
+  "frontend web dev & ", //animate [23]
+  "Cybersecurity. ", //animate [24]
 ];
 
 export const text2 = [
@@ -30,14 +35,16 @@ export const text2 = [
   "in! ",
   "For ",
   "questions, ",
-  "suggestions, job ", //animate [6]
+  "suggestions, job ", //animate [31]
   "offers ",
-  "or anything ", //animate [8]
+  "or ",
+  "anything ",
   "else, ",
   "feel ",
   "free ",
   "to ",
-  "contact me through ", //animate [13]
+  "contact me ", //animate [39]
+  "through ",
   "the ",
-  "contact section.", //animate [15]
+  "contact section.", //animate [42]
 ];

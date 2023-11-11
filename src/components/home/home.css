@@ -1,5 +1,5 @@
 .home--section > h1 {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
   margin-left: 2.6rem;
 }
 
@@ -7,7 +7,7 @@
   max-width: 50rem;
   margin-left: 3rem;
   position: relative;
-  line-height: 2rem;
+  line-height: 2.4rem;
 }
 
 .home--section > .text--wrapper::before {
@@ -16,7 +16,7 @@
   height: 100%;
   position: absolute;
   top: 0;
-  left: -3rem;
+  left: -2rem;
   background: var(--gradient-vertical);
 }
 
@@ -24,13 +24,10 @@
 /* ******************************* */
 @media (max-width: 768px) {
   .home--section > h1 {
-    margin-bottom: 3rem;
+    margin-bottom: 2.4rem;
   }
 
   .home--section > p {
     padding-right: 0rem;
   }
-}
-
-@media (max-width: 380px) {
 }

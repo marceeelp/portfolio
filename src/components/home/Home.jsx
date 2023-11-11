@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { usePage } from "../../contexts/PageContext";
-import { text1, text2 } from "./words";
+import { animatedIndeces, text1, text2 } from "./words";
 import useTextAnimation from "../../animations/useTextAnimation";
 import "./home.css";
 
@@ -13,9 +13,11 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const combinedText = [...text1, ...text2];
-      const randomIndex = Math.floor(Math.random() * combinedText.length);
+      const randomIndex =
+        animatedIndeces[Math.floor(Math.random() * animatedIndeces.length)];
+
       setCurrentWord(combinedText[randomIndex]);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

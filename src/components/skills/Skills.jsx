@@ -6,28 +6,29 @@ import "./skills.css";
 
 const Skills = () => {
   const page = usePage();
-  const [currentSkill, setCurrentSkill] = useState("");
-  const [animatedSkill, setAnimatedSkill] = useTextAnimation("");
+  const [currentTitle, setCurrentTitle] = useState("");
+  const [animatedTitle, setAnimatedTitle] = useTextAnimation("");
 
   useEffect(() => {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * skills.length);
-      setCurrentSkill(skills[randomIndex]);
-    }, 2000);
+      setCurrentTitle(skills[randomIndex].title);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => setAnimatedSkill(currentSkill), [currentSkill]);
+  useEffect(() => setAnimatedTitle(currentTitle), [currentTitle]);
 
   return (
     <section className={page === "Skills" ? "visible" : "invisible"}>
-      <div className="skills--grid">
+      <div className="skill-grid">
         {skills.map((skill, i) => (
-          <div className="skills--skill" key={i}>
-            <p className={skill === currentSkill ? "skills--current" : ""}>
-              {skill === currentSkill ? animatedSkill : skill}
-            </p>
+          <div className="skill" key={i}>
+            <h2>
+              {skill.title === currentTitle ? animatedTitle : skill.title}
+            </h2>
+            <small>{skill.description}</small>
           </div>
         ))}
       </div>
