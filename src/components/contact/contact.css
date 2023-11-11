@@ -49,6 +49,12 @@ button {
   color: var(--light);
 }
 
+input:focus,
+textarea:focus,
+button:focus {
+  border: 2px solid #72f2eb;
+}
+
 textarea {
   resize: none;
 }

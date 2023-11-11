@@ -48,9 +48,9 @@ const Projects = () => {
             className="project"
             style={{ display: selectedProject === i ? "block" : "none" }}
           >
-            <h2 className="project-title">
+            <h3 className="project-title">
               {i === selectedProject ? currentTitle : project.title}
-            </h2>
+            </h3>
 
             <div className="project-details">
               <p className="project-description">{project.description}</p>

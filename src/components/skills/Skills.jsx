@@ -25,9 +25,9 @@ const Skills = () => {
       <div className="skill-grid">
         {skills.map((skill, i) => (
           <div className="skill" key={i}>
-            <h2>
+            <h3>
               {skill.title === currentTitle ? animatedTitle : skill.title}
-            </h2>
+            </h3>
             <small>{skill.description}</small>
           </div>
         ))}

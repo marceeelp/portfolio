@@ -17,7 +17,7 @@ const Home = () => {
         animatedIndeces[Math.floor(Math.random() * animatedIndeces.length)];
 
       setCurrentWord(combinedText[randomIndex]);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);

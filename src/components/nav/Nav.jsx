@@ -16,7 +16,7 @@ const Nav = () => {
 
   return (
     <nav className="nav--section">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <ul className="nav--menu">
         {links.map((link, i) => (
           <li

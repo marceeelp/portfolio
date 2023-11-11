@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <PageProvider>
-      <main className="wrapper">
+      <main className="main">
         <Preloader />
 
         <Header
