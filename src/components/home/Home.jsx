@@ -1,30 +1,49 @@
+import { useState, useEffect } from "react";
 import { usePage } from "../../contexts/PageContext";
+import { text1, text2 } from "./words";
 import useTextAnimation from "../../animations/useTextAnimation";
 import "./home.css";
 
 const Home = () => {
   const page = usePage();
   const heading = useTextAnimation("Welcome.", 4200);
+  const [currentWord, setCurrentWord] = useState("");
+  const [animatedWord, setAnimatedWord] = useTextAnimation("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const combinedText = [...text1, ...text2];
+      const randomIndex = Math.floor(Math.random() * combinedText.length);
+      setCurrentWord(combinedText[randomIndex]);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => setAnimatedWord(currentWord), [currentWord]);
+
+  const renderAnimatedWord = (word) => (
+    <span>{word === currentWord ? animatedWord : word}</span>
+  );
 
   return (
     <section
       className={`home--section ${page === "Home" ? "visible" : "invisible"}`}
     >
       <h1>{heading}</h1>
-      <p>
-        Welcome to my page<span>.</span> My name is <span>Marcel Peda. </span>
-        I'm 26 years old and from Hamburg<span>,</span> Germany<span>. </span>
-        I'm passionate about pretty much everything that has to do with tech
-        <span>.</span>
+      <div className="text--wrapper">
+        <p>
+          {text1.map((word, i) => (
+            <span key={i}>{renderAnimatedWord(word)} </span>
+          ))}
+        </p>
         <br />
-        <br />
-        My journey into the endless space of I.T. started with learning how to
-        create Websites and Web games<span>.</span> It didn't take long til I
-        got curious about how the Internet works<span>,</span> so I started
-        learning about things like Networking and Internet Protocols which led
-        me to what I'm doing today
-        <br />- Cybersecurity<span>.</span>
-      </p>
+        <p>
+          {text2.map((word, i) => (
+            <span key={i}>{renderAnimatedWord(word)} </span>
+          ))}
+        </p>
+      </div>
     </section>
   );
 };

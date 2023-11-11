@@ -3,14 +3,14 @@
   margin-left: 2.6rem;
 }
 
-.home--section > p {
+.home--section > .text--wrapper {
   max-width: 50rem;
   margin-left: 3rem;
-  line-height: 2.2rem;
   position: relative;
+  line-height: 2rem;
 }
 
-.home--section > p::before {
+.home--section > .text--wrapper::before {
   content: "";
   width: 1px;
   height: 100%;
@@ -18,10 +18,6 @@
   top: 0;
   left: -3rem;
   background: var(--gradient-vertical);
-}
-
-.home--section > p > span {
-  color: var(--white);
 }
 
 /* -------- MEDIA QUERIES -------- */

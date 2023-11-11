@@ -38,21 +38,27 @@ const App = () => {
     <PageProvider>
       <main className="wrapper">
         <Preloader />
+
         <Header
           mobile={mobile}
           isClicked={isClicked}
           handleClick={handleClick}
         />
+
         <Routes location={location}>
           <Route path="/portfolio" element={<Home />} />
           <Route path="/portfolio/skills" element={<Skills />} />
           <Route path="/portfolio/projects" element={<Projects />} />
           <Route path="/portfolio/contact" element={<Contact />} />
         </Routes>
+
         {!mobile && <Nav />}
-        {mobile && isClicked && <MobileNav handleClick={handleClick} />}
+        {mobile && isClicked && (
+          <MobileNav handleClick={handleClick} isClicked={isClicked} />
+        )}
+
         <Frame isClicked={isClicked} />
-        <CanvasBackground />
+        {/* <CanvasBackground /> */}
       </main>
     </PageProvider>
   );
