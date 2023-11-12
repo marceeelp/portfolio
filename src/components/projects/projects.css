@@ -130,7 +130,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   .project--titles {
     flex-direction: column;
     align-items: center;
