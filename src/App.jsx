@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (innerWidth <= 780) setMobile(true);
+      if (innerWidth <= 920) setMobile(true);
       else setMobile(false);
     };
 

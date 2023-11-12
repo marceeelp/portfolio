@@ -107,6 +107,13 @@
 
 /* -------- MEDIA QUERIES -------- */
 /* ******************************* */
+@media (max-width: 920px) {
+  .copyright {
+    bottom: 0.6rem;
+    left: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .top-horizontal,
   .bottom-horizontal {
@@ -124,10 +131,5 @@
     width: 15px;
     height: 130px;
     bottom: 15px;
-  }
-
-  .copyright {
-    bottom: 0.6rem;
-    left: 2rem;
   }
 }

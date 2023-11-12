@@ -1,27 +1,25 @@
 import { useState, useEffect } from "react";
 import { usePage } from "../../contexts/PageContext";
-import useTextAnimation from "../../animations/useTextAnimation";
 import projects from "./projectdata";
+import useTextAnimation from "../../animations/useTextAnimation";
 import "./projects.css";
 
 const Projects = () => {
   const page = usePage();
   const [selectedProject, setSelectedProject] = useState(0);
   const [currentTitle, setCurrentTitle] = useTextAnimation("");
-  const [currentSkills, setCurrentSkills] = useTextAnimation("");
+  const [animatedTitle, setAnimatedTitle] = useTextAnimation("");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSelectedProject((prevProject) => (prevProject + 1) % projects.length);
-    }, 15000);
+      const randomIndex = Math.floor(Math.random() * projects.length);
+      setCurrentTitle(projects[randomIndex].title);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    setCurrentTitle(projects[selectedProject].title);
-    setCurrentSkills(projects[selectedProject].skills);
-  }, [selectedProject]);
+  useEffect(() => setAnimatedTitle(currentTitle), [currentTitle]);
 
   return (
     <section
@@ -29,59 +27,39 @@ const Projects = () => {
         page === "Projects" ? "visible" : "invisible"
       }`}
     >
-      <div className="projects--nums">
+      <div className="project--titles">
         {projects.map((project, i) => (
-          <small
+          <h3
             key={i}
             onClick={() => setSelectedProject(i)}
-            className={selectedProject === i ? "active-page" : ""}
+            className={`project--title ${
+              selectedProject === i ? "active-title" : ""
+            }`}
           >
-            {i + 1}
-          </small>
+            {project.title === currentTitle ? animatedTitle : project.title}
+          </h3>
         ))}
       </div>
 
-      <ul className="projects--menu">
-        {projects.map((project, i) => (
-          <li
-            key={i}
-            className="project"
-            style={{ display: selectedProject === i ? "block" : "none" }}
-          >
-            <h3 className="project-title">
-              {i === selectedProject ? currentTitle : project.title}
-            </h3>
+      {projects.map((project, i) => (
+        <div
+          key={i}
+          className="project--info"
+          style={{ display: selectedProject === i ? "block" : "none" }}
+        >
+          <small className="project--description">{project.description}</small>
 
-            <div className="project-details">
-              <p className="project-description">{project.description}</p>
+          <div className="project--links">
+            <a href={project.github} className="project--link" target="_blank">
+              View Github
+            </a>
 
-              <small className="project-skills">
-                {i === selectedProject ? currentSkills : project.skills}
-              </small>
-
-              <a
-                href={project.github}
-                className={`project-link ${
-                  selectedProject === i ? "active" : ""
-                }`}
-                target="_blank"
-              >
-                Github
-              </a>
-
-              <a
-                href={project.live}
-                className={`project-link ${
-                  selectedProject === i ? "active" : ""
-                }`}
-                target="_blank"
-              >
-                Seite ansehen
-              </a>
-            </div>
-          </li>
-        ))}
-      </ul>
+            <a href={project.live} className="project--link" target="_blank">
+              View site
+            </a>
+          </div>
+        </div>
+      ))}
     </section>
   );
 };

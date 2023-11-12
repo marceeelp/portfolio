@@ -30,6 +30,10 @@
   position: relative;
 }
 
+.skill > h3 {
+  font-weight: 900;
+}
+
 /* -------- MEDIA QUERIES -------- */
 /* ******************************* */
 @media (min-width: 800px) and (max-height: 700px) {
