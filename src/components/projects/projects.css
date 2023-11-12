@@ -143,4 +143,8 @@
   .project--title {
     padding: 0.4rem;
   }
+
+  .active-title {
+    margin: 0.4rem 0;
+  }
 }
