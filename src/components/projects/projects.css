@@ -136,6 +136,18 @@
     align-items: center;
   }
 
+  .project--links {
+    padding-left: 0;
+  }
+  .project--links::before,
+  .project--links::after {
+    left: -2rem;
+  }
+
+  .project--link {
+    padding: 0;
+  }
+
   .project--info {
     text-align: center;
   }
