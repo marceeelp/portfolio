@@ -1,0 +1,93 @@
+.contact--section {
+  padding-left: 5rem;
+}
+
+.contact--section > img {
+  width: 6rem;
+  height: 6rem;
+  margin-left: 0.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--light);
+  transform: rotate(-13deg);
+}
+
+.contact--icon {
+  margin-left: 3rem;
+  font-size: 2.4rem;
+  transition: var(--transition);
+}
+.contact--icon:hover {
+  transform: var(--scale-s);
+  cursor: pointer;
+}
+
+.gmail:hover {
+  color: #c71610;
+}
+
+.whatsapp:hover {
+  color: #25d366;
+}
+
+form {
+  max-width: 45rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+button {
+  font-family: "System Code", monospace;
+  letter-spacing: 1px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 0.1px solid var(--light);
+  outline: none;
+  background-color: transparent;
+  color: var(--light);
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  border: 2px solid #72f2eb;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  font-weight: bold;
+  width: 10rem;
+  margin-left: 5px;
+  border: transparent;
+  background: var(--gradient-horizontal);
+  background-size: 200% 100%;
+  background-position: center;
+  color: var(--dark);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+button:hover {
+  background-position: right;
+  transform: var(--scale-xs);
+}
+
+/* -------- MEDIA QUERIES -------- */
+/* ******************************* */
+@media (max-width: 920px) {
+  .contact--section {
+    transform: translateX(-2rem);
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+}

@@ -1,0 +1,75 @@
+.skill-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.skill-grid::before {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  width: 1px;
+  height: 110px;
+  background: var(--gradient-vertical);
+}
+
+.skill-grid::after {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  width: 90px;
+  height: 1px;
+  background: var(--gradient-horizontal-reverse);
+}
+
+.skill {
+  position: relative;
+}
+
+.skill > h3 {
+  font-weight: 900;
+}
+
+/* -------- MEDIA QUERIES -------- */
+/* ******************************* */
+@media (min-width: 800px) and (max-height: 700px) {
+  .skill-grid::before,
+  .skill-grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .skill-grid::before {
+    height: 80px;
+  }
+  .skill-grid::after {
+    width: 60px;
+  }
+}
+
+@media (max-width: 780px) {
+  .skill-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 3rem;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .skill-grid::before,
+  .skill-grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .skill-grid {
+    width: 100%;
+  }
+}

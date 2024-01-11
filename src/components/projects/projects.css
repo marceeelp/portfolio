@@ -1,0 +1,162 @@
+.project--titles {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.project--title {
+  padding: 0 1rem;
+  font-size: 2rem;
+  letter-spacing: 1.2rem;
+  transition: var(--transition);
+}
+
+.active-title {
+  font-size: 4.6rem;
+  font-weight: 900;
+  margin-bottom: -5px;
+  color: var(--white);
+}
+
+.project--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.project--description {
+  line-height: 3rem;
+}
+
+.project--links {
+  width: fit-content;
+  position: relative;
+  padding-left: 8rem;
+  margin: 2rem auto 0 0;
+}
+
+.project--links::before,
+.project--links::after {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  left: 6rem;
+}
+.project--links::before {
+  width: 1px;
+  height: 180%;
+  background: var(--gradient-vertical);
+}
+.project--links::after {
+  width: 70%;
+  height: 1px;
+  background: var(--gradient-horizontal-reverse);
+}
+
+.project--link {
+  letter-spacing: 0.4rem;
+  position: relative;
+  padding-right: 4rem;
+  font-size: 1.4rem;
+  transition: var(--transition);
+}
+
+.project--link:hover,
+.project--title:hover {
+  color: white;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+/* -------- MEDIA QUERIES -------- */
+/* ******************************* */
+@media (max-width: 768px) {
+  .project--title {
+    font-size: 1.6rem;
+  }
+
+  .active-title {
+    font-size: 3rem;
+  }
+
+  .project--description {
+    font-size: 0.8rem;
+  }
+
+  .project--link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .project--title {
+    font-size: 1rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .active-title {
+    font-size: 2.6rem;
+  }
+
+  .project--description {
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .project--links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+    margin: 3rem auto 0;
+  }
+  .project--links::before {
+    height: 50px;
+    left: 0;
+  }
+
+  .project--links::after {
+    width: 100px;
+    left: 0;
+  }
+
+  .project--link {
+    font-size: 1rem;
+    margin: -0.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .project--titles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project--links {
+    padding-left: 0;
+  }
+  .project--links::before,
+  .project--links::after {
+    left: -2rem;
+  }
+
+  .project--link {
+    padding: 0;
+  }
+
+  .project--info {
+    text-align: center;
+  }
+
+  .project--title {
+    padding: 0.4rem;
+  }
+
+  .active-title {
+    margin: 0.4rem 0;
+  }
+}

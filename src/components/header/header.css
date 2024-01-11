@@ -1,0 +1,86 @@
+header {
+  width: 100%;
+  padding: 4.6rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.header--logo {
+  width: 4.6rem;
+  transition: var(--transition);
+}
+
+.header--logo:hover {
+  transform: var(--scale-s);
+}
+
+.header--icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header--icon {
+  font-size: 2.4rem;
+  margin-left: 3rem;
+  transition: var(--transition);
+}
+.header--icon:hover {
+  transform: var(--scale-l);
+  cursor: pointer;
+}
+
+.header--icon.one:hover {
+  color: #ff0000;
+}
+
+.header--icon.two:hover {
+  color: #f1502f;
+}
+
+.header--icon.three:hover {
+  color: #405de6;
+}
+
+/* -------- MEDIA QUERIES -------- */
+/* ******************************* */
+@media (max-width: 920px) {
+  header {
+    padding: 2rem 3rem 2rem 2rem;
+  }
+
+  .header--logo {
+    padding-top: 1rem;
+    margin-left: 1rem;
+    width: 4rem;
+  }
+
+  .header--icons {
+    padding-top: 1rem;
+  }
+
+  .header--icon {
+    margin-left: 2rem;
+  }
+
+  .header--icon.two {
+    margin-right: 4rem;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .header--logo {
+    width: 3rem;
+  }
+
+  .header--icon.two {
+    margin-right: 2rem;
+    font-size: 2.6rem;
+  }
+}

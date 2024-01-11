@@ -1,0 +1,33 @@
+.home--section > h1 {
+  margin-bottom: 1.2rem;
+  margin-left: 2.6rem;
+}
+
+.home--section > .text--wrapper {
+  max-width: 50rem;
+  margin-left: 3rem;
+  position: relative;
+  line-height: 2.4rem;
+}
+
+.home--section > .text--wrapper::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  background: var(--gradient-vertical);
+}
+
+/* -------- MEDIA QUERIES -------- */
+/* ******************************* */
+@media (max-width: 768px) {
+  .home--section > h1 {
+    margin-bottom: 2.4rem;
+  }
+
+  .home--section > p {
+    padding-right: 0rem;
+  }
+}
